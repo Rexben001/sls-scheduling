@@ -11,17 +11,22 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 const Client = require("serverless-mysql");
 module.exports.run = (event, context) => __awaiter(void 0, void 0, void 0, function* () {
-    const client = Client({
-        config: {
-            host: process.env.DB_HOST,
-            database: process.env.DB_NAME,
-            user: process.env.DB_USER,
-            password: process.env.DB_PASS,
-            port: 3309,
-        },
-    });
-    const req = yield client.query("SELECT * FROM bookchat_schedules");
-    const time = new Date();
-    console.log(`Your cron function "${context.functionName}" ran at ${time}`);
-    return req;
+    try {
+        const client = Client({
+            config: {
+                host: process.env.DB_HOST,
+                database: process.env.DB_NAME,
+                user: process.env.DB_USER,
+                password: process.env.DB_PASS,
+                port: 3309,
+            },
+        });
+        const req = yield client.query("SELECT * FROM bookchat_schedules");
+        const time = new Date();
+        console.log(`Your cron function "${context.functionName}" ran at ${time}`);
+        return req;
+    }
+    catch (error) {
+        return error;
+    }
 });

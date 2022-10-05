@@ -19,6 +19,7 @@ provider:
     DB_USER: testadmin
     DB_PASS: password
     DB_NAME: readeotest
+ 
 
 functions:
   rateHandler:

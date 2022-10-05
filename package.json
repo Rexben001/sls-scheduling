@@ -6,7 +6,9 @@
   "license": "MIT",
   "scripts": {
     "local": "serverless offline",
-    "watch": "tsc -w"
+    "watch": "tsc -w",
+    "start":"tsc handler.ts && serverless invoke local --function rateHandler",
+    "cron":"serverless offline start"
   },
   "devDependencies": {
     "@serverless/typescript": "^3.21.0",

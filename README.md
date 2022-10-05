@@ -145,5 +145,11 @@ Your cron function "aws-node-scheduled-cron-dev-rateHandler" ran at Fri Mar 05 2
 To test the scheduling locally
 
 ```bash
-serverless offline start
+serverless offline start or npm run cron
+```
+
+To build and test locally
+
+```bash
+npm start
 ```

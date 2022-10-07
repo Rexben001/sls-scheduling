@@ -8,7 +8,7 @@
     "local": "serverless offline",
     "watch": "tsc -w",
     "start":"tsc && serverless invoke local --function rateHandler",
-    "cron":"serverless offline start"
+    "cron":"tsc && serverless offline start"
   },
   "devDependencies": {
     "@serverless/typescript": "^3.21.0",

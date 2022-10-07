@@ -7,7 +7,7 @@
   "scripts": {
     "local": "serverless offline",
     "watch": "tsc -w",
-    "start":"tsc handler.ts && serverless invoke local --function rateHandler",
+    "start":"tsc && serverless invoke local --function rateHandler",
     "cron":"serverless offline start"
   },
   "devDependencies": {

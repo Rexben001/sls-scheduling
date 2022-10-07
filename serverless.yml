@@ -23,7 +23,7 @@ provider:
 
 functions:
   rateHandler:
-    handler: handler.run
+    handler: build/handler.reminder
     events:
       - schedule: rate(1 minute)
 
